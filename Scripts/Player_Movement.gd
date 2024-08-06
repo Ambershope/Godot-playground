@@ -1,13 +1,22 @@
 extends CharacterBody2D
 
 
-@export var maxSpeed: float = 100
-@export var acceleraton: float = 10
+const maxSpeed = 70
+const acceleraton = 10
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var input: Vector2
 
+func calcMovementVector():
+	input.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	input.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
+	return input.normalized()
+	
+func processMovementVector(delta):
+	var playerVector = calcMovementVector()
+	
+	velocity = lerp(velocity, playerVector * maxSpeed, delta * acceleraton)
+
+	move_and_slide()
 
 func _physics_process(delta):
-	var direction: Vector2 = Input.get_vector("Up", "Down", "Left", "Right")
-	move_and_slide()
+	processMovementVector(delta)
