@@ -7,13 +7,17 @@
 radius = 13.0
 
 [node name="Player" type="CharacterBody2D"]
+rotation = 1.5708
 script = ExtResource("2_sihgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.2, -2.575)
+position = Vector2(-1.49012e-08, -2.38419e-07)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_40wyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.2, -0.575001)
+visible = false
 shape = SubResource("CircleShape2D_ax4k1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

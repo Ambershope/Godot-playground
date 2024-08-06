@@ -10,10 +10,6 @@ size = Vector2(67, 65)
 
 [node name="Player" parent="." instance=ExtResource("1_aacbh")]
 
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-24, -8)
 
