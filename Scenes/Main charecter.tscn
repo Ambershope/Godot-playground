@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://b5nmi6t72u118"]
+[gd_scene load_steps=2 format=3 uid="uid://b5nmi6t72u118"]
+
+[ext_resource type="Texture2D" uid="uid://blx6cxagcyvt8" path="res://Assets/DevArt/TempChaArtHQ.png" id="1_40wyi"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4945, 0.518)
+texture = ExtResource("1_40wyi")
