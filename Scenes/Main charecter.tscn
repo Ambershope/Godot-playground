@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5nmi6t72u118"]
+[gd_scene load_steps=4 format=3 uid="uid://b5nmi6t72u118"]
 
 [ext_resource type="Texture2D" uid="uid://blx6cxagcyvt8" path="res://Assets/DevArt/TempChaArtHQ.png" id="1_40wyi"]
+[ext_resource type="Script" path="res://Scripts/Player_Movement.gd" id="2_sihgy"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax4k1"]
+radius = 13.0
+
+[node name="Player" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4945, 0.518)
+position = Vector2(-0.2, -2.575)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_40wyi")
+script = ExtResource("2_sihgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.2, -0.575001)
+shape = SubResource("CircleShape2D_ax4k1")
