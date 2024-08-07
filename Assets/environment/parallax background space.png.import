@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b17wq54yqkt66"
-path="res://.godot/imported/CharecterTMP 2.png-cd737dc71e8c9a29ebf95c63a99c6250.ctex"
+uid="uid://cwn8ivr0a1gce"
+path="res://.godot/imported/parallax background space.png-0859e1471cd831ea525beaab94d07c4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DevArt/CharecterTMP 2.png"
-dest_files=["res://.godot/imported/CharecterTMP 2.png-cd737dc71e8c9a29ebf95c63a99c6250.ctex"]
+source_file="res://Assets/environment/parallax background space.png"
+dest_files=["res://.godot/imported/parallax background space.png-0859e1471cd831ea525beaab94d07c4c.ctex"]
 
 [params]
 
