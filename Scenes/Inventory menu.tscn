@@ -11,7 +11,7 @@ shader_parameter/blur_amount = 1.0
 shader_parameter/blur_inner = 0.6
 shader_parameter/blur_outer = 0.66
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wc0rj"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ihrjr"]
 size = Vector2(64, 64)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c0j5v"]
@@ -72,7 +72,7 @@ columns = 4
 
 [node name="Inventoryslot 1" type="TextureRect" parent="Inventory Background/GridContainer"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_wc0rj")
+texture = SubResource("PlaceholderTexture2D_ihrjr")
 
 [node name="Inventoryslot 2" type="TextureRect" parent="Inventory Background/GridContainer"]
 layout_mode = 2

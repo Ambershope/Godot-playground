@@ -9,7 +9,8 @@ const MARGIN := 0.25
 # the inventory slots, which are pointers to the image slots, so we can change the images
 # the inventory itself, this is an array of another class called Items
 var inventory_slots: Array = []
-var inventory: Array = []
+var inventory: Array[ItemBase] = []
+
 
 func _ready():
 	inventory_slots = $"Inventory Background/GridContainer".get_children()
@@ -24,7 +25,7 @@ func resize_grid():
 	else:
 		$"Inventory Background/GridContainer"["theme_override_constants/h_separation"] = int(-sizedifference)
 
-func add_item():
+func add_item(Item: ItemBase):
 	pass
 
 

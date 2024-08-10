@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkxyewpl5xene"]
+[gd_scene load_steps=6 format=3 uid="uid://bkxyewpl5xene"]
 
 [ext_resource type="PackedScene" uid="uid://b5nmi6t72u118" path="res://Scenes/Main charecter.tscn" id="1_aacbh"]
 [ext_resource type="Texture2D" uid="uid://d2rbpqcbic5yj" path="res://Assets/DevArt/CharacterTMP.png" id="2_ekryg"]
 [ext_resource type="Texture2D" uid="uid://cwn8ivr0a1gce" path="res://Assets/environment/parallax background space.png" id="3_gmpsm"]
+[ext_resource type="PackedScene" uid="uid://bc3cveaqr3st6" path="res://Scenes/test_trap.tscn" id="4_6ggxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq0vq"]
 size = Vector2(67, 65)
@@ -30,3 +31,9 @@ motion_mirroring = Vector2(10000, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_gmpsm")
+
+[node name="Test Trap" parent="." instance=ExtResource("4_6ggxn")]
+position = Vector2(-215, 35)
+
+[node name="Test Trap2" parent="." instance=ExtResource("4_6ggxn")]
+position = Vector2(-225, -25)

@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://bc3cveaqr3st6"]
+
+[ext_resource type="Script" path="res://Scripts/Test Trap.gd" id="1_nh02n"]
+[ext_resource type="Texture2D" uid="uid://mq0fqmjha0hd" path="res://Assets/DevArt/Random trap 64 px.png" id="2_ujv2o"]
+[ext_resource type="Texture2D" uid="uid://by7lppadbl1c5" path="res://Assets/DevArt/Random trap.png" id="3_q37oj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c08t8"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pkj0"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(12, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n6le"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(24, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8q80"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob4mi"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eg7"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqvvm"]
+atlas = ExtResource("3_q37oj")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljqrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pkj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n6le")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8q80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob4mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eg7")
+}],
+"loop": false,
+"name": &"Loading",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqvvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob4mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eg7")
+}],
+"loop": false,
+"name": &"StartUp",
+"speed": 2.5
+}]
+
+[node name="Test Trap" type="Node2D"]
+script = ExtResource("1_nh02n")
+inventory_image = ExtResource("2_ujv2o")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+linear_damp = 2.0
+angular_damp = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_c08t8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+sprite_frames = SubResource("SpriteFrames_ljqrw")
+animation = &"Active"
+autoplay = "StartUp"
+
+[connection signal="animation_finished" from="RigidBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
